@@ -1,5 +1,20 @@
-import { createContext } from "react";
+import { createContext, useContext, useState } from "react";
 
-const extensionContext = createContext();
+const ExtensionContext = createContext();
 
-const extensionProvider = () => {};
+const ExtensionProvider = ({ children }) => {
+  const [userName, setUserName] = useState("");
+  const [mainFocus, setMainFocus] = useState("");
+
+  return (
+    <ExtensionContext.Provider
+      value={{ userName, setUserName, mainFocus, setMainFocus }}
+    >
+      {children}
+    </ExtensionContext.Provider>
+  );
+};
+
+const useExtension = () => useContext(ExtensionContext);
+
+export { useExtension, ExtensionProvider };

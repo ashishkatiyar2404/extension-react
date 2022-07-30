@@ -1,12 +1,17 @@
 import React from "react";
+import { useExtension } from "../../Contexts/context";
 import "./WelcomePage.css";
 
 const WelcomePage = () => {
+  const { setUserName } = useExtension();
+
   function keyDownHandler(e) {
     if (e.code === "Enter" && e.target.value !== "") {
       const inputValue =
         e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
       console.log(inputValue);
+      setUserName(inputValue);
+      localStorage.setItem("userName", JSON.stringify(inputValue));
     }
   }
   return (
