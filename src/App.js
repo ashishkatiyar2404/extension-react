@@ -1,4 +1,5 @@
 import "./App.css";
+import WelcomePage from "./Pages/WelcomePage/WelcomePage";
 
 function App() {
   // const fetchingData = async () => {
@@ -20,7 +21,7 @@ function App() {
       //   backgroundImage: `url("https://source.unsplash.com/1920x1080/?wallpaper")`,
       // }}
     >
-      ashish
+      <WelcomePage />
     </div>
   );
 }
