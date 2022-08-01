@@ -5,7 +5,8 @@ import WelcomePage from "./Pages/WelcomePage/WelcomePage";
 
 function App() {
   const { userName } = useExtension();
-  return <div className="App">{userName ? <WelcomePage /> : <MainPage />}</div>;
+  console.log(userName);
+  return <div className="App">{userName ? <MainPage /> : <WelcomePage />}</div>;
 }
 
 export default App;
