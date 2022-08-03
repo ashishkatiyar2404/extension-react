@@ -1,16 +1,25 @@
 .mainFocus__conatiner {
   color: white;
   font-size: 2rem;
-  color: aquamarine;
   font-weight: 500;
+  /* position: relative; */
+}
+
+.weather__container {
+  position: absolute;
+  transform: translate(42rem, -20rem);
 }
 
 .edit__btn_container button {
-  /* border: 2px solid green; */
   outline: none;
   background: transparent;
   color: white;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+}
+
+.edit__btn_container button:hover {
+  color: black;
+  background-color: bisque;
 }

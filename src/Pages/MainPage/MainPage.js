@@ -2,9 +2,12 @@ import React from "react";
 import "./MainPage.css";
 import { CurrentTime } from "./CurrentTime";
 import { useExtension } from "../../Contexts/context";
+import Weather from "../../Components/Weather";
 
 const MainPage = () => {
   const { userName, mainFocus, setUserName, setMainFocus } = useExtension();
+
+  // CURRENT DATE
   function TodayDate() {
     return new Date().toDateString();
   }
@@ -38,6 +41,9 @@ const MainPage = () => {
 
   return (
     <div className="mainFocus__conatiner welcome__container">
+      <div className="weather__container">
+        <Weather />
+      </div>
       <div>{TodayDate()}</div>
       <div>
         <CurrentTime />
