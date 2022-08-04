@@ -1,5 +1,5 @@
 import React from "react";
-import Weather from "../../Components/Weather";
+// import Weather from "../../Components/Weather/Weather";
 import { useExtension } from "../../Contexts/context";
 import "./WelcomePage.css";
 
@@ -18,9 +18,9 @@ const WelcomePage = () => {
   }
   return (
     <div className="welcome__container">
-      <div className="weather__container">
+      {/* <div className="weather__container">
         <Weather />
-      </div>
+      </div> */}
       <div className="welcome__msg">Hello! 🙋‍♂️ What's Your Good Name?</div>
       <div className="welcome__input__container">
         <input

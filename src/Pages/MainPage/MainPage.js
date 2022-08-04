@@ -2,7 +2,7 @@ import React from "react";
 import "./MainPage.css";
 import { CurrentTime } from "./CurrentTime";
 import { useExtension } from "../../Contexts/context";
-import Weather from "../../Components/Weather";
+import Weather from "../../Components/Weather/Weather";
 
 const MainPage = () => {
   const { userName, mainFocus, setUserName, setMainFocus } = useExtension();
@@ -66,18 +66,22 @@ const MainPage = () => {
           />
         )}
       </div>
-      <div className="edit__btn_container">
-        {userName !== null && (
-          <button className="btn btn-name" onClick={userNameHandler}>
-            Edit Name
-          </button>
-        )}
-        {mainFocus !== null && (
-          <button className="btn btn-focus" onClick={editFocusHandler}>
-            Edit Focus
-          </button>
-        )}
-      </div>
+      {mainFocus ? (
+        <div className="edit__btn_container">
+          {userName !== null && (
+            <button className="btn btn-name" onClick={userNameHandler}>
+              Edit Name
+            </button>
+          )}
+          {mainFocus !== null && (
+            <button className="btn btn-focus" onClick={editFocusHandler}>
+              Edit Focus
+            </button>
+          )}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
