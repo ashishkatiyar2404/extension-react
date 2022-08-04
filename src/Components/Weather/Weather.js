@@ -26,15 +26,8 @@ const Weather = () => {
 
       setWeather({
         location: response.data.name,
-        country: response.data.sys.country,
-        weather: response.data.weather[0].main,
-        weather_description: response.data.weather[0].description,
         icon: response.data.weather[0].icon,
         temperature: (response.data.main.temp - 273.15).toFixed(0),
-        temperature_min: (response.data.main.temp_min - 273.15).toFixed(2),
-        temperature_max: (response.data.main.temp_max - 273.15).toFixed(2),
-        humidity: response.data.main.humidity,
-        wind: response.data.wind.speed,
       });
     } catch (weatherError) {
       console.log("weather mai masla hogya ji", weatherError);
