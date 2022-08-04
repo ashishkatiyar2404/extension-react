@@ -1,6 +1,10 @@
 import React from "react";
 
 const CurrentTime = () => {
+  const AMPM = () => {
+    const ampm = new Date().getHours();
+    return ampm > 12 && ampm < 24 ? "PM" : "AM";
+  };
   const getTime = () => {
     return (
       new Date()
@@ -12,7 +16,11 @@ const CurrentTime = () => {
         .toLocaleString("en-US", { minimumIntegerDigits: 2 })
     );
   };
-  return <div className="time">{getTime()}</div>;
+  return (
+    <div className="time">
+      {getTime()} {AMPM()}
+    </div>
+  );
 };
 
 export { CurrentTime };
