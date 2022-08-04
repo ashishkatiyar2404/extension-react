@@ -36,7 +36,7 @@ const DailyWish = () => {
 
   return (
     <div className="greeting">
-      {greeting} : {userName}
+      {greeting}, {userName}
     </div>
   );
 };

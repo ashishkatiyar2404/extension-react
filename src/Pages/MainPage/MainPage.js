@@ -4,6 +4,7 @@ import { CurrentTime } from "./CurrentTime";
 import { useExtension } from "../../Contexts/context";
 import Weather from "../../Components/Weather/Weather";
 import DailyWish from "../../Components/DailyWish/DailyWish";
+import Quotes from "../../Components/Quotes/Quotes";
 
 const MainPage = () => {
   const { userName, mainFocus, setUserName, setMainFocus } = useExtension();
@@ -38,19 +39,22 @@ const MainPage = () => {
 
   return (
     <div className="mainFocus__conatiner welcome__container">
+      <div className="dailyQuotes">
+        <Quotes />
+      </div>
+      <div className="currentTime">
+        <CurrentTime />
+      </div>
       <div className="weather__container">
         <Weather />
       </div>
-      <div>{TodayDate()}</div>
-      <div>
-        <CurrentTime />
-      </div>
+      <div className="todaysDate">{TodayDate()}</div>
       <div>
         <DailyWish />
       </div>
       <div className="welcome__input__container">
         {mainFocus ? (
-          <div>My Main Focus is : {mainFocus}</div>
+          <div>My Main Focus is {mainFocus}</div>
         ) : (
           <input
             className="input__write"

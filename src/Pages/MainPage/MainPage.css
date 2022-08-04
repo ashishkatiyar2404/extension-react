@@ -9,6 +9,14 @@
   position: absolute;
   transform: translate(42rem, -20rem);
 }
+.dailyQuotes {
+  position: relative;
+  top: -15%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  /* color: black; */
+  width: 40%;
+}
 
 .edit__btn_container button {
   outline: none;
@@ -22,4 +30,14 @@
 .edit__btn_container button:hover {
   color: black;
   background-color: bisque;
+}
+
+.currentTime {
+  font-size: 6rem;
+  color: rgb(44, 51, 156);
+}
+
+.todaysDate {
+  color: burlywood;
+  margin-bottom: 2rem;
 }
