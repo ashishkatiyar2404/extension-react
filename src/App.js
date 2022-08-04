@@ -1,3 +1,4 @@
+// import { useEffect } from "react";
 import "./App.css";
 import { useExtension } from "./Contexts/context";
 import MainPage from "./Pages/MainPage/MainPage";
@@ -5,7 +6,9 @@ import WelcomePage from "./Pages/WelcomePage/WelcomePage";
 
 function App() {
   const { userName } = useExtension();
-  console.log(userName);
+  // useEffect(() => {
+  //   localStorage.getItem("focusToken");
+  // }, []);
   return <div className="App">{userName ? <MainPage /> : <WelcomePage />}</div>;
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-// import Weather from "../../Components/Weather/Weather";
 import { useExtension } from "../../Contexts/context";
 import "./WelcomePage.css";
 
@@ -18,14 +17,11 @@ const WelcomePage = () => {
   }
   return (
     <div className="welcome__container">
-      {/* <div className="weather__container">
-        <Weather />
-      </div> */}
       <div className="welcome__msg">Hello! 🙋‍♂️ What's Your Good Name?</div>
       <div className="welcome__input__container">
         <input
           className="input__write"
-          placeholder="Write Name & Press Enter"
+          placeholder="Write Name , Press Enter"
           type="text"
           onKeyDown={keyDownHandler}
         />

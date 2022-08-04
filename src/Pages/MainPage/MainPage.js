@@ -3,6 +3,7 @@ import "./MainPage.css";
 import { CurrentTime } from "./CurrentTime";
 import { useExtension } from "../../Contexts/context";
 import Weather from "../../Components/Weather/Weather";
+import DailyWish from "../../Components/DailyWish/DailyWish";
 
 const MainPage = () => {
   const { userName, mainFocus, setUserName, setMainFocus } = useExtension();
@@ -29,14 +30,12 @@ const MainPage = () => {
   function userNameHandler() {
     setUserName("");
     localStorage.getItem("userName", "");
-    // console.log("edit user handler");
   }
 
   // EDIT FOCUS HANDLER
   function editFocusHandler() {
     setMainFocus("");
     localStorage.getItem("focusToken", "  ");
-    // console.log("edit focus handler");
   }
 
   return (
@@ -48,15 +47,12 @@ const MainPage = () => {
       <div>
         <CurrentTime />
       </div>
-      <div>Greeting of Morning, {userName}</div>
-      {/* <div>My main focus is : {focus}</div> */}
+      <div>
+        <DailyWish />
+      </div>
       <div className="welcome__input__container">
         {mainFocus ? (
-          <div>
-            My Main Focus is :
-            {/* JSON.parse(localStorage.getItem("focusToken")) */}
-            {mainFocus}
-          </div>
+          <div>My Main Focus is : {mainFocus}</div>
         ) : (
           <input
             className="input__write"

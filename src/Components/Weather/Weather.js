@@ -23,7 +23,7 @@ const Weather = () => {
               : `lat=${coordinates.latitude}&lon=${coordinates.longitude}`
           }&appid=f3b54ecb4e9937fcb8377bee47363beb`
         ));
-
+      console.log(response.data.name);
       setWeather({
         location: response.data.name,
         icon: response.data.weather[0].icon,
