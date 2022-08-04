@@ -18,13 +18,11 @@ const MainPage = () => {
     if (e.code === "Enter" && e.target.value !== "") {
       const inputFocus =
         e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-      console.log(inputFocus);
       // localStorage.setItem("focusToken", JSON.stringify(inputFocus));
       localStorage.setItem("focusToken", inputFocus);
       setMainFocus(inputFocus);
     }
   }
-  console.log(mainFocus);
 
   // EDIT USER NAME HANDLER
   function userNameHandler() {

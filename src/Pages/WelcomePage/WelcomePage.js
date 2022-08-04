@@ -9,7 +9,6 @@ const WelcomePage = () => {
     if (e.code === "Enter" && e.target.value !== "") {
       const inputValue =
         e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-      console.log(inputValue);
       setUserName(inputValue);
       // localStorage.setItem("userName", JSON.stringify(inputValue));
       localStorage.setItem("userName", inputValue);
