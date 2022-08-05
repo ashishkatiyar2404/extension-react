@@ -9,9 +9,9 @@ const WelcomePage = () => {
     if (e.code === "Enter" && e.target.value !== "") {
       const inputValue =
         e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-      console.log(inputValue);
       setUserName(inputValue);
-      localStorage.setItem("userName", JSON.stringify(inputValue));
+      // localStorage.setItem("userName", JSON.stringify(inputValue));
+      localStorage.setItem("userName", inputValue);
     }
   }
   return (
@@ -20,7 +20,7 @@ const WelcomePage = () => {
       <div className="welcome__input__container">
         <input
           className="input__write"
-          placeholder="Write Name & Press Enter"
+          placeholder="Write Name , Press Enter"
           type="text"
           onKeyDown={keyDownHandler}
         />

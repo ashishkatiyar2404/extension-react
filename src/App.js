@@ -1,29 +1,18 @@
+import { useEffect } from "react";
 import "./App.css";
+import { useExtension } from "./Contexts/context";
+import MainPage from "./Pages/MainPage/MainPage";
 import WelcomePage from "./Pages/WelcomePage/WelcomePage";
 
 function App() {
-  // const fetchingData = async () => {
-  //   console.log("first");
-  //   try {
-  //     const response = await axios.get(
-  //       "https://api.unsplash.com/search/photos?page=1&query=nature&client_id=YKV8cJaG0G-U5QPFPAoUC7KXT7eAwUXenVylMmUAkxs"
-  //     );
-  //     console.log(response.data.results[0].urls.small);
-  //     // console.log(response.data.results);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-  return (
-    <div
-      className="App"
-      // style={{
-      //   backgroundImage: `url("https://source.unsplash.com/1920x1080/?wallpaper")`,
-      // }}
-    >
-      <WelcomePage />
-    </div>
-  );
+  const { userName, setUserName, setMainFocus } = useExtension();
+
+  useEffect(() => {
+    setUserName(localStorage.getItem("userName"));
+    setMainFocus(localStorage.getItem("focusToken"));
+    document.title = "Extension";
+  }, []);
+  return <div className="App">{userName ? <MainPage /> : <WelcomePage />}</div>;
 }
 
 export default App;
