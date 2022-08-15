@@ -11,6 +11,7 @@ function App() {
     setUserName(localStorage.getItem("userName"));
     setMainFocus(localStorage.getItem("focusToken"));
     document.title = "Extension";
+    // eslint-disable-next-line
   }, []);
   return <div className="App">{userName ? <MainPage /> : <WelcomePage />}</div>;
 }
